@@ -65,7 +65,16 @@ class Citas {
     }
 
     eliminarCita(id) {
-        this.citas = this.citas.filter( cita => cita.id !== id);
+        var pregunta = 'Seguro que desea Eliminar?';
+        var respuesta= confirm(pregunta);
+        if(respuesta)
+        {
+            this.citas = this.citas.filter( cita => cita.id !== id);
+            alert('Cita elimnada Exitosamente');
+        }else
+        {
+alert('Cancelacion Exitosa');
+        }
     }
 }
 
