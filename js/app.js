@@ -70,9 +70,6 @@ class Citas {
 }
 
 class UI {
-    constructor() {
-        this.textoHeading();
-    }
 
     imprimirAlerta(mensaje, tipo) {
         // Crea el div
