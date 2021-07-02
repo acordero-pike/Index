@@ -117,7 +117,28 @@ class UI {
                 const {mascota, propietario, telefono, fecha, hora, sintomas, id } = cursor.value;
 
                 const divCita = document.createElement('div');
-                divCita.classList.add('cita', 'p-3');
+                const tiempoTranscurrido = Date.now();
+             const hoy = new Date(tiempoTranscurrido);
+             
+             const dd = hoy.toISOString().split('T')
+            
+ 
+             if(fecha>dd[0])
+             {
+                 console.log('mayor');
+                 divCita.classList.add('cita', 'p-3' , 'warning');
+             }
+             else if(fecha===dd[0])
+             {
+                 divCita.classList.add('cita', 'p-3' , 'today');
+                 console.log('igual');
+             }
+             else{
+                 divCita.classList.add('cita', 'p-3' , 'succes');
+                 console.log('pasado');
+             }
+ 
+                 
                 divCita.dataset.id = id;
 
                 // scRIPTING DE LOS ELEMENTOS...
